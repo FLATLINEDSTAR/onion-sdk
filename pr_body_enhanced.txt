@@ -1,0 +1,31 @@
+## Motivation
+The FLATLINEDSTAR ecosystem requires a stable, versioned contract library that defines core domain models and validation logic. This release establishes a solid foundation for downstream services and external integrations.
+
+## Implementation Details
+- **Model definitions** for `OnionTarget`, `OnionObservation`, `PageObservation`, `Technology`, `Entity`, `Evidence`, `ChangeEvent`, and `SearchQuery` (located in `model/`).
+- **Validation package** (`validation/validation.go`) with comprehensive checks, including mandatory fields, URL parsing, RFC3339 timestamps, confidence ranges, and now a required `Technology.Category`.
+- **Fixture‑based testing**: JSON samples for positive and negative cases under `testdata/fixtures/`, exercised by `validation/validation_fixture_test.go`.
+- **Unit tests** (`validation/validation_test.go`) covering edge cases and error paths.
+- **CI pipeline** (`.github/workflows/ci.yml`) that runs `go fmt`, `go vet`, race‑detector tests, and builds the module on every push/PR.
+- **Documentation updates** (README, architecture diagram, contribution guide, issue/PR templates).
+
+## Testing
+- `go test ./... -race -cover` reports **74.2%** statement coverage with **no failures**.
+- Fixture validation ensures future schema changes are caught early.
+
+## Release Artifacts
+- Tag **`v0.1.0`** created and pushed.
+- Branch **`release/v0.1.0`** prepared for this PR.
+
+## Backward Compatibility
+All public structs retain their JSON tags; no breaking changes introduced.
+
+## Checklist
+- [x] Code formatted with `go fmt`.
+- [x] Linting (`go vet`) passes.
+- [x] Tests pass with race detector.
+- [x] CI workflow integrated.
+- [x] Documentation revised.
+
+Please review the changes and merge to publish the v0.1.0 release.
+
