@@ -1,0 +1,6 @@
+{
+  "observation_id": "obs1",
+  "source": "header",
+  "value": "X-Test",
+  "confidence": 0.85
+}
