@@ -1,0 +1,8 @@
+{
+  "target_id": "t1",
+  "before_observation_id": "obs1",
+  "after_observation_id": "obs2",
+  "changed_fields": [],
+  "timestamp": "2023-01-02T00:00:00Z",
+  "evidence": []
+}
